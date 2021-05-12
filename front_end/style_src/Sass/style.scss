@@ -1,0 +1,14 @@
+/* Base */
+
+@import "variables_overrides";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./base/base.scss";
+
+/* Page */
+
+@import "./pages/homepage.scss";
+
+/* Components */
+
+@import "./components/layout_header.scss";
+@import "./components/layout_footer.scss";
