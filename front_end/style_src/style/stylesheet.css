@@ -9522,23 +9522,8 @@ h3 {
   font-size: 1.5rem;
 }
 
-/* Page */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.2s linear;
-  text-transform: capitalize;
-  font-family: "Exo 2", sans-serif;
-}
-
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
-
-body {
-  overflow: hidden;
+.body {
+  overflow-x: hidden;
 }
 
 #header {
@@ -9547,6 +9532,7 @@ body {
   justify-content: space-between;
   padding: 1.5rem 2.5rem;
   color: #fff;
+  background-color: #333;
 }
 #header .fa-bars {
   font-size: 3rem;
@@ -9607,14 +9593,14 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: #000001;
-  padding: 0;
+  background: rgba(186, 186, 187, 0.89);
+  padding-bottom: 3rem;
   display: none;
 }
 #header .navbar ul {
   height: 100%;
-  width: 35rem;
-  background: #333;
+  width: 30rem;
+  background: rgba(186, 186, 187, 0.89);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9651,10 +9637,132 @@ body {
   color: #fff;
 }
 
+#footer {
+  padding: 2rem 0;
+  background: #333;
+  width: 100vw;
+}
+#footer .row {
+  width: 100%;
+  margin: 0;
+}
+#footer .brand-info {
+  margin: 1rem;
+  padding: 0;
+}
+#footer .brand-info a {
+  color: white;
+  font-size: 2rem;
+}
+#footer .brand-info a:hover {
+  text-decoration: none;
+}
+#footer .brand-info a i {
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+#footer .brand-info a h3 {
+  display: inline;
+  font-size: 2rem;
+}
+#footer .brand-info p {
+  color: #ccc;
+  padding: 2rem;
+  margin: 0;
+  font-size: 1.5rem;
+}
+#footer .links,
+#footer .follow-us {
+  padding: 0;
+  margin: 1rem;
+}
+#footer .links h3,
+#footer .follow-us h3 {
+  font-size: 2rem;
+  color: #fff;
+}
+#footer .links .nav-links,
+#footer .follow-us .nav-links {
+  display: flex;
+  flex-flow: column;
+}
+#footer .links .nav-links a,
+#footer .follow-us .nav-links a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1.5rem;
+}
+#footer .links .nav-links a:hover,
+#footer .follow-us .nav-links a:hover {
+  text-decoration: #ccc;
+}
+#footer .credit {
+  color: #FFF;
+  font-size: 2rem;
+  padding-top: 1.5rem;
+  width: 100%;
+  border-top: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+  text-transform: capitalize;
+  font-family: "Exo 2", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+.banner {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+.banner .lead {
+  font-size: 19px;
+  font-weight: 400;
+}
+
 #home {
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 300px;
   min-height: 100vh;
   width: 100vw;
   background: #333;
+  padding-bottom: 200px;
+}
+#home .home__title__wrapper {
+  padding-bottom: 6em;
+}
+#home .home__title__wrapper .home__title {
+  color: white;
+  font-size: 5em;
+  border-bottom: 6px solid white;
+}
+
+.carousel__cards {
+  position: relative;
+  display: flex;
+}
+.carousel__cards .card {
+  position: absolute;
+}
+.carousel__cards .card .card-body .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel__cards .card .card-body .card-text {
+  font-size: 18px;
+}
+.carousel__cards .card .card-body .card__text__price {
+  font-weight: 600;
 }
 
 /* Components */

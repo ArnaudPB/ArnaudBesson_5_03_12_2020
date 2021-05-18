@@ -8,3 +8,190 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1.5rem;
 }
+
+.body {
+    overflow-x: hidden;
+}
+
+// Header
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2.5rem;
+    color: #fff;
+    background-color: #333;
+    .fa-bars {
+        font-size: 3rem;
+        z-index: 10000;
+        cursor: pointer;
+    }
+    .logo {
+        color: white;
+        font-size: 2rem;
+        .i {
+            padding: 0.5rem;
+        }
+        h1 {
+            display: inline;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .left {
+        .fa-shopping-cart {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .search-container {
+            display: inline;
+            position: relative;
+            #search {
+                position: absolute;
+                top: -1.5rem;
+                right: .8rem;
+                height: 3.5rem;
+                width: 3.5rem;
+                font-size: 1.5rem;
+                padding: 0 1rem;
+                border: none;
+                outline: none;
+                border-radius: 5rem;
+                &:hover,
+                &:focus {
+                    width: 25rem;
+                }
+            }
+            .fa-search {
+                position: absolute;
+                top: -.7rem;
+                left: -3.5rem;
+                font-size: 2rem;
+                cursor: pointer;
+                z-index: 1;
+                color: #333;
+                &:hover {
+                    ~ {
+                        #search {
+                            width: 25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(186, 186, 187, 0.89);
+        padding-bottom: 3rem;
+        display: none;
+        ul {
+            height: 100%;
+            width: 30rem;
+            background: rgba(186, 186, 187, 0.89);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-flow: column;
+            flex-flow: column;
+            list-style: none;
+            li {
+                margin: .5rem 0;
+                a {
+                    display: block;
+                    height: 4rem;
+                    width: 25rem;
+                    background: #fff;
+                    color: #333;
+                    border-radius: 5rem;
+                    text-align: center;
+                    font-size: 2rem;
+                    line-height: 4rem;
+                    &:hover {
+                        text-decoration: none;
+                        background: #EB4D4B;
+                        letter-spacing: .3rem;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Footer
+#footer {
+    padding: 2rem 0;
+    background: #333;
+    width: 100vw;
+    .row {
+        width: 100%;
+        margin: 0;
+    }
+    .brand-info {
+        margin: 1rem;
+        padding: 0;
+        a {
+            color: white;
+            font-size: 2rem;
+            &:hover {
+                text-decoration: none;
+            }
+            i {
+                padding: 0.5rem;
+                font-size: 2rem;
+            }
+            h3 {
+                display: inline;
+                font-size: 2rem;
+            }
+        }
+        p {
+            color: #ccc;
+            padding: 2rem;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+    }
+    .links,
+    .follow-us {
+        padding: 0;
+        margin: 1rem;
+        h3 {
+            font-size: 2rem;
+            color: #fff;
+        }
+        .nav-links {
+            display: flex;
+            flex-flow: column;
+            a {
+                text-decoration: none;
+                color: #ccc;
+                font-size: 1.5rem;
+                &:hover {
+                    text-decoration: #ccc;
+                }
+            }
+        }
+    }
+    .credit {
+        color: #FFF;
+        font-size: 2rem;
+        padding-top: 1.5rem;
+        width: 100%;
+        border-top: 4px solid rgba(255, 255, 255, .5);
+    }
+}
