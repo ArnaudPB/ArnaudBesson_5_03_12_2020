@@ -54,7 +54,7 @@ function displayCamera(camera) {
 }
 
 //Adding to cart
-function addToCart(camera) {
+/*function addToCart(camera) {
     const optionValue = cameraOptions.options[cameraOptions.selectedIndex].value;
 
     if (panier.some(item => item.id === idCamera) && panier.some(item => item.option === optionValue)) {
@@ -72,7 +72,7 @@ function addToCart(camera) {
             cartNotification.classList.remove("d-block")
         }, 2000);
     }
-}
+}*/
 
 // MAIN FUNCTION
 document.addEventListener("DOMContentLoaded", () => {
