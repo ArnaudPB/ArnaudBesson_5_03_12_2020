@@ -1,3 +1,4 @@
+const apiUrl = "http://localhost:3000/api/cameras";
 const idUrl = window.location.search;
 const urlParams = new URLSearchParams(idUrl);
 const idCamera = urlParams.get('id');
@@ -5,6 +6,7 @@ const idCamera = urlParams.get('id');
 const cameraDOM = document.querySelector(".camera-container");
 const cameraName = document.querySelector(".camera-name");
 const cameraImg = document.querySelector(".camera-img");
+console.log(cameraName);
 const cameraDescription = document.querySelector(".camera-description");
 const cameraPrice = document.querySelector(".camera-price");
 const cameraOptions = document.querySelector(".camera-options");
@@ -21,8 +23,10 @@ class CartItem {
 // Getting the camera
 async function getCamera() {
     try {
-        let result = await fetch(apiUrl + idCamera);
+        let result = await fetch(apiUrl + '/' + idCamera);
+        //console.log(result.text());
         let data = await result.json();
+        console.log(data);
         return data;
 
     } catch (error) {
@@ -76,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Getting the camera and displaying
     getCamera().then(camera => {
+        console.log(camera);
         displayCamera(camera);
         // Adding to cart and local storage
         addToCartButton.addEventListener("click", () => {
