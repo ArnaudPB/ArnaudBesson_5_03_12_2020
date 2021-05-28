@@ -29,7 +29,7 @@ function displayProducts(products) {
                         <h5 class="card-title">${product.name}</h5>
                         <p class="card-text">${product.description}</p>
                         <p>Prix : <span class="font-weight-bold">${product.price / 100} €</span></p>
-                        <a href="../front_end/pages/product?id=${product._id}" class="btn btn-outline-primary btn-block">Voir le produit</a>
+                        <a href="./front_end/pages/product.html?id=${product._id}" class="btn btn-outline-primary btn-block">Voir le produit</a>
                     </div>
             </div>
             <!-- Single item end-->
@@ -44,5 +44,5 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Content loaded");
 
     //Getting all products
-    getProducts().then(products => displayProducts(products)); // Récuperer les données depuis l'API puis afficher les produits
+    getProducts().then(products => displayProducts(products)); // get datas from the API and then displays products
 });

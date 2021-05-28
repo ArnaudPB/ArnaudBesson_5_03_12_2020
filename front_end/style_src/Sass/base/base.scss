@@ -89,6 +89,7 @@
         width: 100vw;
         background: rgba(186, 186, 187, 0.89);
         padding-bottom: 3rem;
+        z-index: 9999;
         display: none;
         ul {
             height: 100%;
@@ -146,7 +147,7 @@
         padding: 0;
         a {
             color: white;
-            font-size: 2rem;
+            font-size: 18px;
             &:hover {
                 text-decoration: none;
             }
@@ -163,7 +164,7 @@
             color: #ccc;
             padding: 2rem;
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 18px;
         }
     }
     .links,
@@ -179,10 +180,10 @@
             flex-flow: column;
             a {
                 text-decoration: none;
+                font-size: 18px;
                 color: #ccc;
-                font-size: 1.5rem;
                 &:hover {
-                    text-decoration: #ccc;
+                    text-decoration: underline #ccc;
                 }
             }
         }

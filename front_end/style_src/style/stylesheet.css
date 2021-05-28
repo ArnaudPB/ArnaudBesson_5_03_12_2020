@@ -9595,6 +9595,7 @@ h3 {
   width: 100vw;
   background: rgba(186, 186, 187, 0.89);
   padding-bottom: 3rem;
+  z-index: 9999;
   display: none;
 }
 #header .navbar ul {
@@ -9652,7 +9653,7 @@ h3 {
 }
 #footer .brand-info a {
   color: white;
-  font-size: 2rem;
+  font-size: 18px;
 }
 #footer .brand-info a:hover {
   text-decoration: none;
@@ -9669,7 +9670,7 @@ h3 {
   color: #ccc;
   padding: 2rem;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 18px;
 }
 #footer .links,
 #footer .follow-us {
@@ -9689,12 +9690,12 @@ h3 {
 #footer .links .nav-links a,
 #footer .follow-us .nav-links a {
   text-decoration: none;
+  font-size: 18px;
   color: #ccc;
-  font-size: 1.5rem;
 }
 #footer .links .nav-links a:hover,
 #footer .follow-us .nav-links a:hover {
-  text-decoration: #ccc;
+  text-decoration: underline #ccc;
 }
 #footer .credit {
   color: #FFF;
