@@ -56,13 +56,16 @@ function displayCamera(camera) {
 //Adding to cart
 function addToCart(camera) {
     const optionValue = cameraOptions.options[cameraOptions.selectedIndex].value;
-    console.log(item);
+    
+    console.log("item count : " + itemCounter);
+    
+    // console.log("ici c'est les items :" + item);
     if (panier.some(item => item.id === idCamera) && panier.some(item => item.option === optionValue)) {
-        console.log(item);
+        //console.log(item);
         alert("L'objet est deja dans votre panier.");
     } else {
-        console.log(item)
         const item = new CartItem(idCamera, optionValue);
+        console.log(item)
         panier.push(item);
         localStorage.setItem("panier", JSON.stringify(panier));
         //Displaying cart item number
