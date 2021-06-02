@@ -9555,6 +9555,7 @@ h3 {
 #header .left .fa-shopping-cart {
   font-size: 2rem;
   cursor: pointer;
+  color: white;
 }
 #header .left .search-container {
   display: inline;
