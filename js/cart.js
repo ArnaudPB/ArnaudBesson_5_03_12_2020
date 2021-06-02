@@ -220,7 +220,7 @@ function sendOrder() {
                 localStorage.setItem('order', JSON.stringify(order));
                 //Redirecting
                 localStorage.removeItem("panier");
-                document.location.href = "../front_end/pages/confirmation.html";
+                document.location.href = "../pages/confirmation.html";
             })
             .catch(error => console.error("Erreur :" + error))
     });
