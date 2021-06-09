@@ -175,14 +175,21 @@ function checkForm() {
 
     var firstName = document.getElementById('firstName');
     var stringf = document.getElementById('firstName').value;
-    if (stringf == "") {
-        alert("First name must be filled out");
-        return false;
-    } else if (stringf.length > 35) {
+    var lastName = document.getElementById('lastName');
+    var stringl = document.getElementById('lastName').value;
+
+    if (stringf.length > 35) {
         alert("First name cannot be more than 35 characters");
         return false;
-    } else if (/[^a-zA-Z0-9\-]/.test(stringf)) {
-        alert("Family name can only contain alphanumeric characters and hypehns(-)")
+    } else if (/[^a-zA-Z\-]/.test(stringf)) {
+        alert("First name can only contain alphanumeric characters and hypehns(-)")
+        return false;
+    }
+    if (stringl.length > 35) {
+        alert("Last name cannot be more than 35 characters");
+        return false;
+    } else if (/[^a-zA-Z\-]/.test(stringl)) {
+        alert("Last name can only contain alphanumeric characters and hypehns(-)")
         return false;
     }
     return true;
@@ -203,48 +210,50 @@ function sendOrder() {
         const zipCode = document.getElementById('zipCode').value;
 
         //Contact
-        let contact = {
-            firstName: firstName,
-            lastName: lastName,
-            address: address,
-            city: city,
-            email: email,
-            zipCode: zipCode
-        }
-
-        //Products
-        let products = [];
-        panier.forEach(item => {
-            products.push(item.id);
-        });
-
-        //Order
-        let order = {
-            contact: contact,
-            products: products
-        }
-
-        //Sending Order(POST)
-        const options = {
-            method: 'POST',
-            body: JSON.stringify(order),
-            headers: {
-                'Content-Type': 'application/json'
+        if (checkForm() == true) {
+            let contact = {
+                firstName: firstName,
+                lastName: lastName,
+                address: address,
+                city: city,
+                email: email,
+                zipCode: zipCode
             }
-        }
 
-        fetch(apiUrl + 'order', options)
-            .then(order => order.json())
-            .then(order => {
-                localStorage.setItem('order', JSON.stringify(order));
-                //Redirecting
-                localStorage.removeItem("panier");
-                document.location.href = "../pages/confirmation.html";
-            })
-            .catch(error => console.error("Erreur :" + error))
+            //Products
+            let products = [];
+            panier.forEach(item => {
+                products.push(item.id);
+            });
+
+            //Order
+            let order = {
+                contact: contact,
+                products: products
+            }
+
+            //Sending Order(POST)
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(order),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+
+            fetch(apiUrl + 'order', options)
+                .then(order => order.json())
+                .then(order => {
+                    localStorage.setItem('order', JSON.stringify(order));
+                    //Redirecting
+                    localStorage.removeItem("panier");
+                    document.location.href = "../pages/confirmation.html";
+                })
+                .catch(error => console.error("Erreur :" + error))
+        } else if (checkForm() == false) {}
     });
+    return true;
 };
-checkForm();
 
 //MAIN FUNCTION
 document.addEventListener("DOMContentLoaded", () => {
