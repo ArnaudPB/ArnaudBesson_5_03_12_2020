@@ -171,6 +171,23 @@ function deletingItem(item) {
 
 };
 
+function checkForm() {
+
+    var firstName = document.getElementById('firstName');
+    var stringf = document.getElementById('firstName').value;
+    if (stringf == "") {
+        alert("First name must be filled out");
+        return false;
+    } else if (stringf.length > 35) {
+        alert("First name cannot be more than 35 characters");
+        return false;
+    } else if (/[^a-zA-Z0-9\-]/.test(stringf)) {
+        alert("Family name can only contain alphanumeric characters and hypehns(-)")
+        return false;
+    }
+    return true;
+}
+
 //Sending Order
 function sendOrder() {
     const form = document.querySelector('.order-form');
@@ -183,6 +200,7 @@ function sendOrder() {
         const address = document.getElementById('address').value;
         const city = document.getElementById('city').value;
         const email = document.getElementById('email').value;
+        const zipCode = document.getElementById('zipCode').value;
 
         //Contact
         let contact = {
@@ -190,7 +208,8 @@ function sendOrder() {
             lastName: lastName,
             address: address,
             city: city,
-            email: email
+            email: email,
+            zipCode: zipCode
         }
 
         //Products
@@ -225,6 +244,7 @@ function sendOrder() {
             .catch(error => console.error("Erreur :" + error))
     });
 };
+checkForm();
 
 //MAIN FUNCTION
 document.addEventListener("DOMContentLoaded", () => {
@@ -247,5 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+    checkForm();
     sendOrder();
+
 })
